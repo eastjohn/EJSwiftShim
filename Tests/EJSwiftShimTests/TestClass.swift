@@ -8,7 +8,7 @@
 import Foundation
 
 
-class TestClass : NSObject {
+class TestClass {
     @objc static var staticIntProperty: Int {
         get {
             return 20
@@ -21,7 +21,7 @@ class TestClass : NSObject {
     }
     
     
-    @objc func stringToInt(aString: String) -> Int {
+    @objc dynamic func stringToInt(aString: String) -> Int {
         return Int(aString) ?? 0
     }
 }

@@ -39,12 +39,20 @@ public class Shim : Shimable, Replacable {
     }
     
     
+    deinit {
+        resetMethod()
+    }
+    
+    
     func replaceMethod() {
-        fatalError("Not implementation method.")
+        guard originalIMP == nil else { return }
+        originalIMP = method_setImplementation(targetMethod, replacingBlock)
     }
     
     
     func resetMethod() {
-        fatalError("Not implementation method.")
+        guard let unwrapped = originalIMP else { return }
+        method_setImplementation(targetMethod, unwrapped)
+        originalIMP = nil
     }
 }

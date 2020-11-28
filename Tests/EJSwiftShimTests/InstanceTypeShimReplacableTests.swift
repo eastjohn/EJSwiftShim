@@ -8,20 +8,113 @@
 import XCTest
 
 class InstanceTypeShimReplacableTests: XCTestCase {
-
+    private var shim: InstanceTypeShim!
+    private var target: TestClass!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        shim = TestShimCreator.createInstanceShim() as? InstanceTypeShim
+        target = TestClass()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        shim = nil
+        target = nil
     }
 
     
+    // MARK: - Given
+    func givenRepaceMethod() {
+        shim.replaceMethod()
+    }
+    
+    
     func testAsReplacable_ThenReturnReplacalble() throws {
-        let shim = TestShimCreator.createInstanceShim() as! InstanceTypeShim
-        
-        
         XCTAssertTrue(shim === shim.asReplacable())
+    }
+    
+    
+    func testReplaceMethod_ThenMethodReplaced() throws {
+        let expected = 100
+        
+        
+        shim.replaceMethod()
+        
+        
+        XCTAssertEqual(expected, target.stringToInt(aString: "890"))
+    }
+    
+    
+    func testReplaceMethod_ThenSetOriginalIMP() throws {
+        shim.replaceMethod()
+        
+        
+        XCTAssertNotNil(shim.originalIMP)
+    }
+    
+    
+    func testTwiceReplaceMethod_ThenMethodReplaced() throws {
+        let expected = 100
+        
+        
+        shim.replaceMethod()
+        shim.replaceMethod()
+        
+        
+        XCTAssertEqual(expected, target.stringToInt(aString: "890"))
+    }
+    
+    
+    func testTwiceReplaceMethod_ThenNotChangeOriginalIMP() throws {
+        shim.replaceMethod()
+        let originalIMP = shim.originalIMP
+        
+        
+        shim.replaceMethod()
+        
+        
+        XCTAssertEqual(originalIMP, shim.originalIMP)
+    }
+    
+    
+    func testResetMethod_ThenChangeToOriginalMethod() throws {
+        givenRepaceMethod()
+        let expected = 890
+        
+        
+        shim.resetMethod()
+        
+        
+        XCTAssertEqual(expected, target.stringToInt(aString: "\(expected)"))
+    }
+    
+    
+    func testResetMethod_ThenOrignalIMPIsNil() throws {
+        givenRepaceMethod()
+        
+        
+        shim.resetMethod()
+        
+        
+        XCTAssertNil(shim.originalIMP)
+    }
+    
+    
+    func testTwiceResetMethod_ThenNotThrow() throws {
+        givenRepaceMethod()
+        
+        shim.resetMethod()
+        shim.resetMethod()
+    }
+    
+    
+    func testDeinit_ThenRestMethod() throws {
+        givenRepaceMethod()
+        let expected = 890
+        
+        
+        shim = nil
+        
+        
+        XCTAssertEqual(expected, target.stringToInt(aString: "\(expected)"))
     }
 }

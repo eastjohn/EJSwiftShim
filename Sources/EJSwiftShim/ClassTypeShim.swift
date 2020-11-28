@@ -17,22 +17,4 @@ class ClassTypeShim : Shim {
                        targetMethod: method,
                        replacingBlock: replacingBlock)
     }
-    
-    
-    deinit {
-        resetMethod()
-    }
-    
-    
-    override func replaceMethod() {
-        guard originalIMP == nil else { return }
-        originalIMP = method_setImplementation(targetMethod, replacingBlock)
-    }
-    
-    
-    override func resetMethod() {
-        guard let unwrapped = originalIMP else { return }
-        method_setImplementation(targetMethod, unwrapped)
-        originalIMP = nil
-    }
 }

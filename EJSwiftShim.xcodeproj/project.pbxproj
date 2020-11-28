@@ -114,15 +114,15 @@
 		OBJ_11 /* EJSwiftShimTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_12 /* EJSwiftShimTests.swift */,
 				52C20AC22571374500655EBF /* ShimCreateClassTypeTests.swift */,
 				52C20AEA25715A5F00655EBF /* ShimCreateIntanceTypeTests.swift */,
-				52C20AC8257139B200655EBF /* TestClass.swift */,
-				OBJ_13 /* XCTestManifests.swift */,
 				52C20B00257163B100655EBF /* ContextTests.swift */,
-				52C20B0C257173F400655EBF /* MockShim.swift */,
 				52C20B122572156300655EBF /* ClassTypeShimReplacableTests.swift */,
 				52C20B182572170E00655EBF /* InstanceTypeShimReplacableTests.swift */,
+				OBJ_12 /* EJSwiftShimTests.swift */,
+				52C20B0C257173F400655EBF /* MockShim.swift */,
+				52C20AC8257139B200655EBF /* TestClass.swift */,
+				OBJ_13 /* XCTestManifests.swift */,
 			);
 			name = EJSwiftShimTests;
 			path = Tests/EJSwiftShimTests;
