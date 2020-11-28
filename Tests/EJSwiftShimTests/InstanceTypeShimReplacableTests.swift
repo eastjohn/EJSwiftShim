@@ -117,4 +117,16 @@ class InstanceTypeShimReplacableTests: XCTestCase {
         
         XCTAssertEqual(expected, target.stringToInt(aString: "\(expected)"))
     }
+    
+    
+    func testDeinit_ThenBlockImpIsReleased() throws {
+        givenRepaceMethod()
+        let blockIMP = shim.replacingBlock
+        
+        
+        shim = nil
+        
+        
+        XCTAssertNil(imp_getBlock(blockIMP))
+    }
 }
