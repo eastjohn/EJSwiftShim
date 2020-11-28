@@ -11,6 +11,8 @@ import Foundation
 public struct Context {
     var shims = [Shimable]()
     
+    public init() {}
+    
     public mutating func addShim(_ shim: Shimable) {
         shims.append(shim)
     }
