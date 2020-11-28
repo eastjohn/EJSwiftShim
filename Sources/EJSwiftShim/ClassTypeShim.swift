@@ -19,6 +19,11 @@ class ClassTypeShim : Shim {
     }
     
     
+    deinit {
+        resetMethod()
+    }
+    
+    
     override func replaceMethod() {
         guard originalIMP == nil else { return }
         originalIMP = method_setImplementation(targetMethod, replacingBlock)

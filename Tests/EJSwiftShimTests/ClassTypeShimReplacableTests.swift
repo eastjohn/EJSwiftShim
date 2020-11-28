@@ -93,7 +93,19 @@ class ClassTypeShimReplacableTests: XCTestCase {
     func testTwiceResetMethod_ThenNotThrow() throws {
         givenRepaceMethod()
         
-        self.shim.resetMethod()
-        self.shim.resetMethod()
+        shim.resetMethod()
+        shim.resetMethod()
+    }
+    
+    
+    func testDeinit_ThenRestMethod() throws {
+        givenRepaceMethod()
+        let expected = 100
+        
+        
+        shim = nil
+        
+        
+        XCTAssertEqual("\(expected)", TestClass.intToString(number: expected))
     }
 }
