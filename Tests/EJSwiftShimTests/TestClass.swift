@@ -9,7 +9,7 @@ import Foundation
 
 
 class TestClass {
-    @objc static var staticIntProperty: Int {
+    @objc dynamic static var staticIntProperty: Int {
         get {
             return 20
         }
@@ -18,6 +18,13 @@ class TestClass {
     
     @objc dynamic static func intToString(number: Int) -> String {
         return "\(number)"
+    }
+    
+    
+    @objc dynamic var instanceDoubleProperty: Double {
+        get {
+            return 50.0
+        }
     }
     
     
