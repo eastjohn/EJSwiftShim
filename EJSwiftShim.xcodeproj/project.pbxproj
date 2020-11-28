@@ -21,6 +21,20 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		52C20AC32571374500655EBF /* ShimCreateClassTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20AC22571374500655EBF /* ShimCreateClassTypeTests.swift */; };
+		52C20AC9257139B200655EBF /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20AC8257139B200655EBF /* TestClass.swift */; };
+		52C20ACF25713C8200655EBF /* Shim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20ACE25713C8200655EBF /* Shim.swift */; };
+		52C20AD525713CF800655EBF /* Shimable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20AD425713CF800655EBF /* Shimable.swift */; };
+		52C20ADB2571406400655EBF /* ClassTypeShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20ADA2571406400655EBF /* ClassTypeShim.swift */; };
+		52C20AE125714FA800655EBF /* ShimError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20AE025714FA800655EBF /* ShimError.swift */; };
+		52C20AEB25715A5F00655EBF /* ShimCreateIntanceTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20AEA25715A5F00655EBF /* ShimCreateIntanceTypeTests.swift */; };
+		52C20AF125715B6100655EBF /* InstanceTypeShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20AF025715B6100655EBF /* InstanceTypeShim.swift */; };
+		52C20AFB257161D200655EBF /* BlockChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20AFA257161D200655EBF /* BlockChecker.swift */; };
+		52C20B01257163B100655EBF /* ContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20B00257163B100655EBF /* ContextTests.swift */; };
+		52C20B072571645000655EBF /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20B062571645000655EBF /* Context.swift */; };
+		52C20B0D257173F400655EBF /* MockShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20B0C257173F400655EBF /* MockShim.swift */; };
+		52C20B132572156300655EBF /* ClassTypeShimReplacableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20B122572156300655EBF /* ClassTypeShimReplacableTests.swift */; };
+		52C20B192572170E00655EBF /* InstanceTypeShimReplacableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C20B182572170E00655EBF /* InstanceTypeShimReplacableTests.swift */; };
 		OBJ_24 /* EJSwiftShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* EJSwiftShim.swift */; };
 		OBJ_31 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_42 /* EJSwiftShimTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* EJSwiftShimTests.swift */; };
@@ -46,6 +60,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52C20AC22571374500655EBF /* ShimCreateClassTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimCreateClassTypeTests.swift; sourceTree = "<group>"; };
+		52C20AC8257139B200655EBF /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
+		52C20ACE25713C8200655EBF /* Shim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shim.swift; sourceTree = "<group>"; };
+		52C20AD425713CF800655EBF /* Shimable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimable.swift; sourceTree = "<group>"; };
+		52C20ADA2571406400655EBF /* ClassTypeShim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTypeShim.swift; sourceTree = "<group>"; };
+		52C20AE025714FA800655EBF /* ShimError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimError.swift; sourceTree = "<group>"; };
+		52C20AEA25715A5F00655EBF /* ShimCreateIntanceTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimCreateIntanceTypeTests.swift; sourceTree = "<group>"; };
+		52C20AF025715B6100655EBF /* InstanceTypeShim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceTypeShim.swift; sourceTree = "<group>"; };
+		52C20AFA257161D200655EBF /* BlockChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockChecker.swift; sourceTree = "<group>"; };
+		52C20B00257163B100655EBF /* ContextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextTests.swift; sourceTree = "<group>"; };
+		52C20B062571645000655EBF /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		52C20B0C257173F400655EBF /* MockShim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockShim.swift; sourceTree = "<group>"; };
+		52C20B122572156300655EBF /* ClassTypeShimReplacableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTypeShimReplacableTests.swift; sourceTree = "<group>"; };
+		52C20B182572170E00655EBF /* InstanceTypeShimReplacableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceTypeShimReplacableTests.swift; sourceTree = "<group>"; };
 		"EJSwiftShim::EJSwiftShim::Product" /* EJSwiftShim.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EJSwiftShim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"EJSwiftShim::EJSwiftShimTests::Product" /* EJSwiftShimTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = EJSwiftShimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_12 /* EJSwiftShimTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EJSwiftShimTests.swift; sourceTree = "<group>"; };
@@ -87,7 +115,14 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_12 /* EJSwiftShimTests.swift */,
+				52C20AC22571374500655EBF /* ShimCreateClassTypeTests.swift */,
+				52C20AEA25715A5F00655EBF /* ShimCreateIntanceTypeTests.swift */,
+				52C20AC8257139B200655EBF /* TestClass.swift */,
 				OBJ_13 /* XCTestManifests.swift */,
+				52C20B00257163B100655EBF /* ContextTests.swift */,
+				52C20B0C257173F400655EBF /* MockShim.swift */,
+				52C20B122572156300655EBF /* ClassTypeShimReplacableTests.swift */,
+				52C20B182572170E00655EBF /* InstanceTypeShimReplacableTests.swift */,
 			);
 			name = EJSwiftShimTests;
 			path = Tests/EJSwiftShimTests;
@@ -102,7 +137,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -112,7 +147,6 @@
 				OBJ_17 /* LICENSE */,
 				OBJ_18 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -127,6 +161,13 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* EJSwiftShim.swift */,
+				52C20ACE25713C8200655EBF /* Shim.swift */,
+				52C20AD425713CF800655EBF /* Shimable.swift */,
+				52C20AE025714FA800655EBF /* ShimError.swift */,
+				52C20ADA2571406400655EBF /* ClassTypeShim.swift */,
+				52C20AF025715B6100655EBF /* InstanceTypeShim.swift */,
+				52C20AFA257161D200655EBF /* BlockChecker.swift */,
+				52C20B062571645000655EBF /* Context.swift */,
 			);
 			name = EJSwiftShim;
 			path = Sources/EJSwiftShim;
@@ -198,7 +239,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,8 +273,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				52C20AC9257139B200655EBF /* TestClass.swift in Sources */,
 				OBJ_42 /* EJSwiftShimTests.swift in Sources */,
 				OBJ_43 /* XCTestManifests.swift in Sources */,
+				52C20B072571645000655EBF /* Context.swift in Sources */,
+				52C20AC32571374500655EBF /* ShimCreateClassTypeTests.swift in Sources */,
+				52C20ADB2571406400655EBF /* ClassTypeShim.swift in Sources */,
+				52C20B192572170E00655EBF /* InstanceTypeShimReplacableTests.swift in Sources */,
+				52C20B132572156300655EBF /* ClassTypeShimReplacableTests.swift in Sources */,
+				52C20B01257163B100655EBF /* ContextTests.swift in Sources */,
+				52C20AFB257161D200655EBF /* BlockChecker.swift in Sources */,
+				52C20AF125715B6100655EBF /* InstanceTypeShim.swift in Sources */,
+				52C20AE125714FA800655EBF /* ShimError.swift in Sources */,
+				52C20AD525713CF800655EBF /* Shimable.swift in Sources */,
+				52C20AEB25715A5F00655EBF /* ShimCreateIntanceTypeTests.swift in Sources */,
+				52C20B0D257173F400655EBF /* MockShim.swift in Sources */,
+				52C20ACF25713C8200655EBF /* Shim.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
