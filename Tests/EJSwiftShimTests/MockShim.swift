@@ -6,6 +6,7 @@
 //
 
 import Foundation
+@testable import EJSwiftShim
 
 class MockShim: Shimable, Replacable {
     var wasCalled = ""

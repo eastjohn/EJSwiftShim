@@ -7,6 +7,7 @@
 
 import XCTest
 import CoreMotion
+@testable import EJSwiftShim
 
 class AcceptanceTests: XCTestCase {
     private var context: Context!

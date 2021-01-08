@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import EJSwiftShim
 
 class ShimCreateIntanceTypeTests: XCTestCase {
     
