@@ -158,4 +158,29 @@ class AcceptanceTests: XCTestCase {
             }
         }
     }
+    
+    
+    func testAsyncReplaceInstanceMethodOfCMMotionManager() throws {
+        let expectation = self.expectation(description: "test CMMotionManager")
+        let expectedError = NSError(domain: "test", code: 10, userInfo: nil)
+        let motion = CMMotionManager()
+        let shim = try Shim.createInstanceTypeShim(target: type(of: motion),
+                                                   targetSelector: #selector(CMMotionManager.startGyroUpdates(to:withHandler:)),
+                                                   replacingBlock: { (_, queue:OperationQueue, handler: @escaping CMGyroHandler) in
+                                                        DispatchQueue.global().async {
+                                                            handler(nil, expectedError)
+                                                        }
+                                                   } as @convention(block) (Any, OperationQueue, @escaping CMGyroHandler)->() )
+        
+        context.addShim(shim)
+        context.asyncRun { completed in
+            motion.startGyroUpdates(to: OperationQueue.current!) { _, error in
+                XCTAssertEqual(expectedError, error! as NSError)
+                completed()
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
 }
