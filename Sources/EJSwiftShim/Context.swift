@@ -39,4 +39,12 @@ public struct Context {
         execute()
         shims.forEach { $0.asReplacable().resetMethod() }
     }
+    
+    
+    public func asyncRun(execute: (_ completed: @escaping ()->() )->() ) {
+        shims.forEach { $0.asReplacable().replaceMethod() }
+        execute {
+            shims.forEach { $0.asReplacable().resetMethod() }
+        }
+    }
 }

@@ -142,4 +142,38 @@ class ContextTests: XCTestCase {
         
         thenWasCalledShimsOfContext(expectedWasCalled: expectedWasCalled)
     }
+    
+    
+    func testAsyncRun_ThenReplaceMethodShims() {
+        let expectedWasCalled = "called replaceMethod()"
+        context.addShims([MockShim(), MockShim()])
+        
+        var wasCalled = false
+        context.asyncRun { _ in
+            wasCalled = true
+            thenWasCalledShimsOfContext(expectedWasCalled: expectedWasCalled)
+        }
+        
+        XCTAssertTrue(wasCalled)
+    }
+    
+    
+    func testAsyncRun_WhenCallCompleted_ThenResetMethodShims() {
+        let expectation = self.expectation(description: "test asyncRun")
+        let expectedWasCalled = "called resetMethod()"
+        context.addShims([MockShim(), MockShim()])
+        
+        context.asyncRun { completed in
+            context.shims.forEach {
+                ($0 as! MockShim).wasCalled = ""
+            }
+            DispatchQueue.main.async {
+                completed()
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 1)
+        thenWasCalledShimsOfContext(expectedWasCalled: expectedWasCalled)
+    }
 }
