@@ -5,7 +5,7 @@ EJSwiftShim is a framework that can be useful for testing. You can verify the fu
 ## USAGE
 
 - Block signature should be:  (self, method_args...) -> method__return__type
-- ClassPropery
+- ClassProperty
 
     ```swift
     let shim = try Shim.createClassTypeShim(target: NSDate.self,      
@@ -50,4 +50,15 @@ EJSwiftShim is a framework that can be useful for testing. You can verify the fu
             XCTAssertEqual(expectedError, error! as NSError)  
         }  
     }
+    ```
+
+
+## Installation
+
+- Swift Package Manager
+    Set the swift packageManager in the xcode project or add the following code to the Package.swift file.
+    ```swift
+    dependencies: [
+        .package(url: "https://github.com/eastjohn/EJSwiftShim.git", .upToNextMajor(from: "0.2.0"))
+    ]
     ```
